@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (2.0.2)
+  - Charts (2.1.4)
+  - JBChartView (2.8.16)
+  - Kanna (1.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - JBChartView
+  - Kanna (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  Charts: 870589b6b4bf8468baacea8869c28983d71f602c
+  JBChartView: 8e65b7fbb4e7f1f2c0197575734fce4af1c19e17
+  Kanna: 92799095ecb17b85ac2444bb5c8ce6394a137adb
+
+COCOAPODS: 0.38.2
