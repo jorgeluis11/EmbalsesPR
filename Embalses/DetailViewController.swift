@@ -16,16 +16,29 @@ class DetailViewController: UIViewController {
     var county:String?
     var date:String?
     var meters:String?
+    var niveles:[Double]?
     
     @IBOutlet var labelWater: UILabel!
     var chartData = [899.56]
+    
+    @IBOutlet var navigationBar: UINavigationBar!
+    
+    @IBAction func backButton(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+        print("Sdf")
+    }
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
+    }
+    
+    override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationBar.ba = backButton
         
-        print(meters)
-        
-        
-     
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         
@@ -36,40 +49,47 @@ class DetailViewController: UIViewController {
     func setChart(dataPoints: [String], values: [Double]) {
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
-        let ll = ChartLimitLine(limit: 60, label: "Ajustes Operacionales")
-        barChartView.rightAxis.addLimitLine(ll)
-        
-        let l2 = ChartLimitLine(limit: 80, label: "Obervación")
-        barChartView.rightAxis.addLimitLine(l2)
+        if let niveles = niveles{
+            
+            var ll = ChartLimitLine(limit: niveles[0], label: "Desborde")
+            
+//            ll.setLineColor(Color.RED);
+//            
+//        
+//                        ll.setLineWidth(4f);
+//                        ll.setTextColor(Color.BLACK);
+//                        ll.setTextSize(12f);
 
-        let l3 = ChartLimitLine(limit: 40, label: "Control")
-        barChartView.rightAxis.addLimitLine(l3)
+            barChartView.rightAxis.addLimitLine(ll)
+            
+            barChartView.rightAxis.addLimitLine(ChartLimitLine(limit: niveles[1], label: "Seguridad"))
+            
+            barChartView.rightAxis.addLimitLine(ChartLimitLine(limit: niveles[2], label: "Obervación"))
+            
+            barChartView.rightAxis.addLimitLine(ChartLimitLine(limit: niveles[3], label: "Ajustes Operacionales"))
+            
+            barChartView.rightAxis.addLimitLine(ChartLimitLine(limit: niveles[4], label: "Control"))
+            
+//            var xAxis:ChartYAxis = barChartView.getAxis(ChartYAxis(position: 34.34))
+//            LimitLine ll = new LimitLine(140f, "Critical Blood Pressure");
+//            ll.setLineColor(Color.RED);
+//            ll.setLineWidth(4f);
+//            ll.setTextColor(Color.BLACK);
+//            ll.setTextSize(12f);
+            // .. and more styling options
+//            
+//            leftAxis.addLimitLine(ll);
+        }
         
-        let l4 = ChartLimitLine(limit: 20, label: "Fuera de Servicio")
-        barChartView.rightAxis.addLimitLine(l4)
-        
-        let l5 = ChartLimitLine(limit: 120, label: "Seguridad")
-        barChartView.rightAxis.addLimitLine(l5)
-        
-        let l6 = ChartLimitLine(limit: 180, label: "Desborde")
-        barChartView.rightAxis.addLimitLine(l6)
         
         
         barChartView.noDataText = "You need to provide data for the chart."
-//  
-        var meterDouble:Double = Double(self.meters!)!
+        let meterDouble:Double = Double(self.meters!)!
         let dataEntries: [BarChartDataEntry] = [BarChartDataEntry(value: meterDouble, xIndex: 0)]
-        
-//        for i in 0..<dataPoints.count {
-//            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
-//            dataEntries.append(dataEntry)
-//        }
-        
-        print(dataEntries)
         
         let dataPoints2 = [self.county]
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Agua en Metros")
         let chartData = BarChartData(xVals: dataPoints2, dataSet: chartDataSet)
         barChartView.data = chartData
         

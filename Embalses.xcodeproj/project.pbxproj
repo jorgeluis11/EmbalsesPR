@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F420E911BC0E06700A065CC /* backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F420E901BC0E06700A065CC /* backup.swift */; settings = {ASSET_TAGS = (); }; };
 		7F5132881BBAC8EA00FB0769 /* EmbalsesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5132871BBAC8EA00FB0769 /* EmbalsesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7F51328A1BBAC9BE00FB0769 /* EmbalsesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5132891BBAC9BE00FB0769 /* EmbalsesTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		7F5132A61BBC182600FB0769 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5132A51BBC182600FB0769 /* Charts.framework */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		21802ABF77ABD0B9A7C4C7D9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7F420E901BC0E06700A065CC /* backup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backup.swift; sourceTree = "<group>"; };
+		7F420E921BC214DC00A065CC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7F5132871BBAC8EA00FB0769 /* EmbalsesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbalsesTableViewController.swift; sourceTree = "<group>"; };
 		7F5132891BBAC9BE00FB0769 /* EmbalsesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbalsesTableViewCell.swift; sourceTree = "<group>"; };
 		7F51328B1BBB525C00FB0769 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
@@ -122,14 +125,16 @@
 			children = (
 				7FCC79651BBA2C1C00188463 /* AppDelegate.swift */,
 				7FCC79671BBA2C1C00188463 /* DetailViewController.swift */,
+				7F5132871BBAC8EA00FB0769 /* EmbalsesTableViewController.swift */,
 				7FCC79A11BBA31F400188463 /* Embalses-Bridging-Header.h */,
 				7FCC79691BBA2C1C00188463 /* Main.storyboard */,
 				7FCC796C1BBA2C1C00188463 /* Assets.xcassets */,
 				7FCC796E1BBA2C1C00188463 /* LaunchScreen.storyboard */,
 				7FCC79711BBA2C1C00188463 /* Info.plist */,
-				7F5132871BBAC8EA00FB0769 /* EmbalsesTableViewController.swift */,
+				7F420E901BC0E06700A065CC /* backup.swift */,
 				7F5132891BBAC9BE00FB0769 /* EmbalsesTableViewCell.swift */,
 				7F51329E1BBC14B500FB0769 /* JBChartView-Bridging-Header.h */,
+				7F420E921BC214DC00A065CC /* DetailViewController.h */,
 			);
 			path = Embalses;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				7F5132881BBAC8EA00FB0769 /* EmbalsesTableViewController.swift in Sources */,
 				7F51328A1BBAC9BE00FB0769 /* EmbalsesTableViewCell.swift in Sources */,
 				7FCC79681BBA2C1C00188463 /* DetailViewController.swift in Sources */,
+				7F420E911BC0E06700A065CC /* backup.swift in Sources */,
 				7FCC79661BBA2C1C00188463 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
